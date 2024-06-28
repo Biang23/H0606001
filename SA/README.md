@@ -12,3 +12,8 @@ python run_glue.py \
 --num_train_epochs 3 \
 --output_dir models/bert-base-cased-sst-2-lr==1e-5_max_sl==384
 ```
+
+You can download the model weights of above bash command via 
+```bash
+https://drive.google.com/file/d/1MjGLdc_Dy0K_B7k92xw-h5sCtjVmYIuD/view?usp=drive_link
+```
