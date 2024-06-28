@@ -12,7 +12,7 @@ sentiments = {
 
 def sentiment_analysis(model_path):
     while True:
-        text = input("Please input your film content.")
+        text = input("Please input your film content:\n")
         
         model = AutoModelForSequenceClassification.from_pretrained(model_path)
         tokenizer = AutoTokenizer.from_pretrained(model_path)
@@ -24,10 +24,12 @@ def sentiment_analysis(model_path):
         logits = output.logits
         probs = torch.softmax(logits, dim=-1)
         predicted_label = torch.argmax(probs, dim=-1).item()
-        predictions = sentiments[predicted_label]
+
+        predictions = sentiments[str(predicted_label)]
         
         print(f"current input: {text}")
         print(f"cuurent_prediction: {predictions}")
+        print("==========================")
 
 def main():
 
